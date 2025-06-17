@@ -1,0 +1,19 @@
+#input-id{
+  width: 10rem;
+  height: 2rem;
+  font-size: 1rem;
+  background: #efefef;
+  border: none;
+  :hover{
+    background: white;
+    border: aliceblue;
+  }
+
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border: 2px solid #007bff; /* exemplo: borda azul ao focar */
+  box-shadow: 0 0 3px #007bff66;
+}
