@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'mk-text-box',
@@ -11,6 +11,21 @@ export class MkTextBoxComponent {
 
   @Input() value: string | null = null
 
-  @Input() caption!: string
+  @Output() valueChange: EventEmitter<any> = new EventEmitter()
+
+  @Input() placeholder!: string
+
+  @Output() onChange: EventEmitter<any> = new EventEmitter()
+
+  _onInputChange(event: any){
+    this.value = event.target?.value
+    this.valueChange.emit(this.value)
+  }
+
+  constructor() {
+
+  }
+
+
 
 }

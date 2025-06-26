@@ -1,2 +1,7 @@
-<label style="font-size: 0.85rem; font-family: 'Cousine Nerd Font',sans-serif">{{ caption }}</label><br>
-<input id="input-id" type="text" [value]="value">
+<input
+  id="input-id"
+  type="text"
+  [placeholder]="placeholder"
+  (change)="onChange.emit($event)"
+  (input)="_onInputChange($event)"
+  [value]="value">
