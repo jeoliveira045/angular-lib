@@ -1,13 +1,19 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {AfterContentChecked, AfterContentInit, Component, EventEmitter, Input, Output} from '@angular/core';
+import {NgxMaskDirective, provideNgxMask} from "ngx-mask";
 
 @Component({
   selector: 'mk-date-box',
   standalone: true,
-  imports: [],
+  imports: [
+    NgxMaskDirective
+  ],
+  providers: [
+      provideNgxMask()
+  ],
   templateUrl: './mk-date-box.component.html',
   styleUrl: './mk-date-box.component.scss'
 })
-export class MkDateBoxComponent {
+export class MkDateBoxComponent{
   @Input() value!: string | null
 
   @Output() valueChange: EventEmitter<any> = new EventEmitter()
@@ -16,11 +22,10 @@ export class MkDateBoxComponent {
 
   @Output() onChange: EventEmitter<any> = new EventEmitter()
 
-  @Input() format: string
+  @Input({required: true}) mask!: string
 
   constructor() {
-    this.format = 'dd/MM/yyyy'
-    this.format = this.format.replaceAll(/([a-zA-Z]+)/g, ' ')
+
   }
 
   _onChange(event: any){
@@ -28,7 +33,6 @@ export class MkDateBoxComponent {
   }
 
   _onInputChange(e: any){
-    console.log(this.format.split(''))
     this.value = e.target.value
     this.valueChange.emit(this.value)
   }

@@ -13,7 +13,7 @@ import {MkDateBoxComponent} from './components/form/mk-date-box/mk-date-box.comp
 export class AppComponent {
   formData: any = {
     nome: '',
-    dataNascimento: ''
+    dataNascimento: '28/10/1997'
   }
 
   onChange(e: any){

@@ -1,8 +1,11 @@
-<input
+<input id="input-date-box-id"
   [placeholder]="placeholder"
   type="text"
+  [mask]="mask"
   [value]="value"
   (change)="_onChange($event)"
   (input)="_onInputChange($event)">
+<br>
+<br>
 
 <!--<input type="date">-->

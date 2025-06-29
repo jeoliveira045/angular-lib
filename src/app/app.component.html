@@ -1,11 +1,12 @@
 <h1>Hello </h1>
-<!--<mk-text-box-->
-<!--  [placeholder]="'Nome'"-->
-<!--  (onChange)="onChange($event)"-->
-<!--  [(value)]="formData.nome"></mk-text-box>-->
+<mk-text-box
+  [placeholder]="'Nome'"
+  (onChange)="onChange($event)"
+  [(value)]="formData.nome"></mk-text-box>
 
 <mk-date-box
   [(value)]="formData.dataNascimento"
+  mask="d0/M0/0000"
   [placeholder]="'Data de nascimento'"
   (onChange)="onChange($event)"
   ></mk-date-box>
